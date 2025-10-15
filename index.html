@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#007aff',
+                        'brand-gray': {
+                            100: '#f8f9fa',
+                            200: '#e9ecef',
+                            700: '#495057',
+                            800: '#343a40',
+                            900: '#212529',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inline CSS for custom styles like gradients and animations -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-background {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-brand-gray-100 text-brand-gray-800 antialiased">
+
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col">
+
+        <!-- Header -->
+        <header class="bg-white shadow-sm sticky top-0 z-10">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <!-- SVG Logo -->
+                    <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h1 class="text-xl font-bold text-brand-gray-900">OnePage</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-brand-blue transition duration-300">Features</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-blue transition duration-300">Pricing</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-blue transition duration-300">About</a>
+                    <button class="bg-brand-blue text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" class="text-gray-600 hover:text-brand-blue focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+                <a href="#" class="block py-2 text-gray-600 hover:text-brand-blue">Features</a>
+                <a href="#" class="block py-2 text-gray-600 hover:text-brand-blue">Pricing</a>
+                <a href="#" class="block py-2 text-gray-600 hover:text-brand-blue">About</a>
+                <button class="mt-2 w-full bg-brand-blue text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                    Get Started
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="gradient-background py-20 md:py-32">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-4xl md:text-6xl font-bold text-brand-gray-900 mb-4 leading-tight">Build Modern Websites Faster</h2>
+                    <p class="text-lg md:text-xl text-brand-gray-700 max-w-3xl mx-auto mb-8">
+                        This entire page, including its styles and scripts, is contained within a single HTML file, styled with the power of Tailwind CSS.
+                    </p>
+                    <button class="bg-brand-blue text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                        Learn More &rarr;
+                    </button>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold text-brand-gray-900">Why This Approach is Awesome</h3>
+                        <p class="text-brand-gray-700 mt-2">Discover the benefits of a single-file setup.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Feature Card 1 -->
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-brand-blue rounded-full mb-6">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Completely Portable</h4>
+                            <p class="text-brand-gray-700">
+                                With everything in one file, sharing and deploying your project is as simple as moving a single document. No complex build steps needed.
+                            </p>
+                        </div>
+                        <!-- Feature Card 2 -->
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-brand-blue rounded-full mb-6">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Rapid Prototyping</h4>
+                            <p class="text-brand-gray-700">
+                                Quickly sketch out ideas and build functional prototypes without worrying about file structures or linking stylesheets.
+                            </p>
+                        </div>
+                        <!-- Feature Card 3 -->
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-brand-blue rounded-full mb-6">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Easy to Understand</h4>
+                            <p class="text-brand-gray-700">
+                                The structure is straightforward. The styles are right there with the HTML elements they apply to, making the code easy to read and maintain.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-brand-gray-900 text-white">
+            <div class="container mx-auto px-6 py-8 text-center">
+                <p>&copy; 2025 OnePage. All rights reserved.</p>
+                <p class="text-sm text-gray-400 mt-2">A demonstration of a beautiful, single-file webpage.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Simple JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
